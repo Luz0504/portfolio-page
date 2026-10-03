@@ -3,37 +3,8 @@ const today = new Date();
 ---
 
 <footer>
-	&copy; {today.getFullYear()} María Luz. All rights reserved.
-	<div class="social-links">
-		<a href="https://m.webtoo.ls/@astro" target="_blank">
-			
-		</a>
-		<a href="https://twitter.com/astrodotbuild" target="_blank">
-			
-		</a>
-		<a href="https://github.com/withastro/astro" target="_blank">
-			
-		</a>
+	<div class="w-full border-t border-gray-200 px-6 py-8 align-middle text-center">
+		<p>&copy; {today.getFullYear()} María Luz. All rights reserved.</p>
+		
 	</div>
 </footer>
-<style>
-	footer {
-		padding: 2em 1em 6em 1em;
-		background: linear-gradient(var(--gray-gradient)) no-repeat;
-		color: rgb(var(--gray));
-		text-align: center;
-	}
-	.social-links {
-		display: flex;
-		justify-content: center;
-		gap: 1em;
-		margin-top: 1em;
-	}
-	.social-links a {
-		text-decoration: none;
-		color: rgb(var(--gray));
-	}
-	.social-links a:hover {
-		color: rgb(var(--gray-dark));
-	}
-</style>

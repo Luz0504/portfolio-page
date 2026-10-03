@@ -1,0 +1,66 @@
+---
+import { Image } from 'astro:assets';
+import type { CollectionEntry } from 'astro:content';
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+
+type Props = CollectionEntry<'blog'>['data'];
+
+const { title, description, heroImage } = Astro.props;
+---
+
+<html lang="es">
+	<head>
+		<BaseHead title={title} description={description} />
+	</head>
+
+	<body class="min-h-screen bg-white text-gray-900">
+		<Header />
+
+		<main class="mx-auto max-w-6xl px-6 py-16">
+
+			<article>
+
+				<!-- Imagen principal -->
+				{heroImage && (
+					<div class="mb-12 overflow-hidden rounded-3xl">
+						<Image
+							width={1200}
+							height={700}
+							src={heroImage}
+							alt={title}
+							class="h-auto w-full object-cover"
+						/>
+					</div>
+				)}
+
+				<!-- Información del proyecto -->
+				<header class="mb-12 max-w-3xl">
+					<p class="mb-3 text-sm font-medium uppercase tracking-widest text-[#a3195b]">
+						Proyecto
+					</p>
+
+					<h1 class="text-5xl font-bold tracking-tight md:text-7xl">
+						{title}
+					</h1>
+
+					{description && (
+						<p class="mt-6 text-xl leading-relaxed text-gray-600">
+							{description}
+						</p>
+					)}
+				</header>
+
+				<!-- Contenido del proyecto -->
+				<div class="max-w-3xl">
+					<slot />
+				</div>
+
+			</article>
+
+		</main>
+
+		<Footer />
+	</body>
+</html>

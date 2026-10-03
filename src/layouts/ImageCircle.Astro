@@ -1,0 +1,61 @@
+---
+import type { ImageMetadata } from "astro";
+import imageDefault from "../assets/images/de-nacimiento.jpg";
+import overlayDefault from "../assets/images/mug.png";
+
+interface Props {
+  imageSrc?: ImageMetadata;
+  altText?: string;
+  overlaySrc?: ImageMetadata;
+  text?: string;
+}
+
+const {
+  imageSrc = imageDefault,
+  altText = "Aaaaaaaa",
+  overlaySrc = overlayDefault,
+  text = "Diseño gráfico",
+} = Astro.props;
+---
+
+<div class="relative aspect-square w-64">
+
+  <!-- Taza -->
+  <img
+    src={overlaySrc.src}
+    alt=""
+    class="pointer-events-none absolute inset-0 z-0 h-full w-full object-contain"
+  />
+
+  <!-- Foto circular -->
+  <div class="absolute inset-[10%] z-10 overflow-hidden rounded-full">
+    <img
+      src={imageSrc.src}
+      alt={altText}
+      class="h-full w-full object-cover"
+    />
+  </div>
+
+  <!-- Texto -->
+  <svg
+  viewBox="0 0 200 200"
+  class="pointer-events-none absolute inset-0 h-full w-full overflow-visible"
+>
+  <path
+  id="circlePath"
+  d="M 5,100 A 95,95 0 0,0 195,100"
+  fill="none"
+/>
+
+  <text class="fill-black text-[15px] font-semibold tracking-wider">
+    <textPath
+      href="#circlePath"
+      startOffset="50%"
+      text-anchor="middle"
+    >
+      {text}
+    </textPath>
+  </text>
+</svg>
+
+</div>

@@ -1,22 +1,13 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
-import Footer from '../components/Footer.astro';
-import Header from '../components/Header.astro';
-import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
-import "../styles/global.css";
+import Layout from '../layouts/Layout.astro';
+import ImageCircle from '../layouts/ImageCircle.astro';
 ---
 
-<!doctype html>
-<html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-	<body>
-		<Header />
-		<main>
-			<h1>Welcome to my page!</h1>
+<Layout>
 
-		</main>
-		<Footer />
-	</body>
-</html>
+	<section>
+		aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+		<ImageCircle/>
+	</section>
+
+</Layout>
