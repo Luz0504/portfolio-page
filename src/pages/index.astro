@@ -1,13 +1,43 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import ImageCircle from '../layouts/ImageCircle.astro';
+import Layout from "../layouts/Layout.astro";
+import Category from "../components/Category.astro";
+
+import { soles, denacimiento, fruit, pattern } from "../assets/images/index.js";
 ---
 
-<Layout>
+<body class="bg-cyan-200">
+  <Layout>
+      <section
+        class="w-full min-h-screen bg-repeat p-20"
+        style={`background-image: url('${pattern.src}');`}
+      >
+        <Category
+          imageSrc={soles}
+          category="Branding"
+          description="A good coffee is a great way to start the day! Just like a good design is a great way to start your brand!"
+          side="left"
+        />
 
-	<section>
-		aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-		<ImageCircle/>
-	</section>
+        <Category
+          imageSrc={denacimiento}
+          overlaySrc={fruit}
+          category="Character design / Illustration"
+          description="Colors and shapes! From original characters to commissioned art, just like a fruit salad, I have a variety of designs for you to check out!"
+          side="right"
+        />
 
-</Layout>
+        <Category
+          imageSrc={undefined}
+          category="Graphic design"
+          description="Designing is like making a tower of pancakes! Pictures get added on top of each other, following a certain structure."
+          side="left"
+        />
+
+        <Category
+          imageSrc={undefined}
+          category="UX/UI"
+          description="User Experience and User Interface are like jam to a plain toast! Designed with Figma, I have different websites and apps you can look at!"
+          side="right"
+        />
+  </Layout>
+</body>

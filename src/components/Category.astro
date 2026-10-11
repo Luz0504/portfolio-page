@@ -1,0 +1,40 @@
+---
+import ImageCircle from "../layouts/ImageCircle.astro";
+
+interface Props {
+  imageSrc: any;
+  overlaySrc?: any;
+  category: string;
+  description: string;
+  side?: "left" | "right";
+}
+
+const {
+  imageSrc,
+  overlaySrc,
+  category,
+  description,
+  side = "left",
+} = Astro.props;
+
+const textOnLeft = side === "right";
+---
+
+<section
+  class:list={[
+    "bg-amber-100/40 gap-10 flex items-center rounded-[10rem] p-10",
+    textOnLeft ? "flex-row-reverse" : "flex-row",
+  ]}
+>
+  <ImageCircle imageSrc={imageSrc} overlaySrc={overlaySrc} text={category} />
+
+  <div class:list={["flex-1", textOnLeft ? "text-right" : "text-left"]}>
+    <h2 class="text-4xl">
+      {category}
+    </h2>
+
+    <p class="text-lg md:text-2xl">
+      {description}
+    </p>
+  </div>
+</section>

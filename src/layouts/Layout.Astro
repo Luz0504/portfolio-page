@@ -1,35 +1,32 @@
 ---
-import '../styles/global.css';
+import "../styles/global.css";
 
-import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 
 interface Props {
-	title?: string;
-	description?: string;
+  title?: string;
+  description?: string;
 }
 
-const {
-	title = SITE_TITLE,
-	description = SITE_DESCRIPTION,
-} = Astro.props;
+const { title = SITE_TITLE, description = SITE_DESCRIPTION } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="es">
-	<head>
-		<BaseHead title={title} description={description} />
-	</head>
+<html lang="es" >
+  <head>
+    <BaseHead title={title} description={description} />
+  </head>
 
-	<body class="mx-20 max-w-6xl px-2 py-2">
-		<Header />
+  <body class="bg-cyan-200 p-30">
+    <Header />
 
-		<main>
-			<slot />
-		</main>
+    <main>
+      <slot />
+    </main>
 
-		<Footer />
-	</body>
+    <Footer />
+  </body>
 </html>
