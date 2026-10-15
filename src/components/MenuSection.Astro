@@ -1,0 +1,32 @@
+---
+interface Props {
+  title: string;
+  side?: "left" | "right";
+}
+
+const { title, side = "left" } = Astro.props;
+---
+
+<section class="grid grid-cols-1 items-top gap-5 md:grid-cols-2 md:gap-8">
+
+  <div class:list={[
+    "min-w-0",
+    side === "right" && "md:order-2",
+  ]}>
+    <h3 class="mb-2 text-3xl uppercase">
+      {title}
+    </h3>
+
+    <div>
+      <slot />
+    </div>
+  </div>
+
+  <div class:list={[
+    "min-w-0",
+    side === "right" && "md:order-1",
+  ]}>
+    <slot name="images" />
+  </div>
+
+</section>
