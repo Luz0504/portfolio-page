@@ -4,5 +4,6 @@ import pancakes from "./pancakes.png";
 import toast from "./toast.png";
 import denacimiento from "./denacimiento.jpg";
 import pattern from "./pattern.png";
+import polka from "./polka.png";
 
-export { denacimiento, soles, fruit, pancakes, toast, pattern };
+export { denacimiento, soles, fruit, pancakes, toast, pattern, polka };
