@@ -1,3 +1,4 @@
+
 {
   "extends": "astro/tsconfigs/strict",
   "include": [
@@ -10,6 +11,8 @@
   "compilerOptions": {
     "strictNullChecks": true,
     "jsx": "react-jsx",
-    "jsxImportSource": "react"
+    "jsxImportSource": "react",
+    "module": "ESNext",
+    "moduleResolution": "bundler"
   }
 }

@@ -1,20 +1,49 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Menu from "../components/Menu.astro";
+import { telephone, aboutcard, menu } from "../assets/images";
 
-import { pattern } from "../assets/images/index.js";
 ---
 
 <Layout>
   <main class="flex flex-col items-center justify-center px-10">
     <section
-      class="flex flex-col items-center justify-center py-20"
+      class="mx-auto grid max-w-375 grid-cols-2 items-center gap-6 px-6 py-12 md:min-h-[calc(100vh-5rem)] md:grid-cols-3 md:gap-10 md:px-12 lg:px-16"
     >
-      <h1 class="text-center text-4xl font-black md:text-7xl">
-        Welcome to my portfolio!
-      </h1>
-    </section>
+      <a
+        href="/projects"
+        aria-label="Ver proyectos"
+        class="block transition duration-300 hover:-rotate-2 hover:scale-105"
+      >
+        <img
+          src={menu.src}
+          alt="Menú de proyectos"
+          class="h-auto w-full drop-shadow-lg"
+        />
+      </a>
 
-    <Menu pattern={pattern} />
+      <a
+        href="/about"
+        aria-label="Conocer más sobre mí"
+        class="block transition duration-300 hover:-rotate-2 hover:scale-105"
+      >
+        <img
+          src={aboutcard.src}
+          alt="Hi! My name is María Luz Sueldo"
+          class="h-auto w-full drop-shadow-lg"
+        />
+      </a>
+
+      <a
+        href="/contact"
+        aria-label="Contactarme"
+        class="col-span-2 mx-auto block w-3/4 transition duration-300 hover:rotate-3 hover:scale-105 md:col-span-1 md:w-full"
+      >
+        <img
+          src={telephone.src}
+          alt="Teléfono vintage para contacto"
+          class="h-auto w-full drop-shadow-lg"
+        />
+      </a>
+    </section>
   </main>
 </Layout>

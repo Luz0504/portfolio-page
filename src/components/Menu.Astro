@@ -1,14 +1,12 @@
 ---
 import type { ImageMetadata } from "astro";
-import MenuSection from "./MenuSection.astro";
-
-import { denacimiento } from "../assets/images/index.js";
 
 interface Props {
   pattern: ImageMetadata;
+  title?: string;
 }
 
-const { pattern } = Astro.props;
+const { pattern, title = "Today's Menu" } = Astro.props;
 ---
 
 <section
@@ -19,126 +17,11 @@ const { pattern } = Astro.props;
     <h2
       class="mb-10 text-4xl uppercase text-[#78302f] md:mb-14 md:text-6xl"
     >
-      Today's Menu
+      {title}
     </h2>
 
     <div class="space-y-10 md:space-y-12">
-      <MenuSection title="Illustration">
-        <p class="mb-1">Concept Art - Character Design</p>
-        <ul class="mb-4 ml-6 list-disc space-y-1">
-          <li>
-            Personal Projects
-            <span class="text-gray-500">
-              (Characters made for my own stories and their designs through the
-              years)
-            </span>
-          </li>
-          <li>
-            Commissions
-            <span class="text-gray-500">
-              (Character designs created for others' stories!)
-            </span>
-          </li>
-        </ul>
-
-        <p>Art</p>
-        <ul class="ml-6 list-disc space-y-1">
-          <li>
-            Personal Projects <span class="text-gray-500"
-              >(Art made for fun or practice!)</span>
-          </li>
-          <li>
-            Fanart <span class="text-gray-500"
-              >(Art based on existing characters from different games or shows)</span>
-          </li>
-        </ul>
-
-        <div slot="images" class="grid grid-rows-3 gap-1">
-          <img
-            src={denacimiento.src}
-            alt="Illustration project"
-            class="h-24 w-full object-cover md:h-32"
-          />
-          <img
-            src={denacimiento.src}
-            alt="Character design project"
-            class="h-24 w-full object-cover md:h-32"
-          />
-          <img
-            src={denacimiento.src}
-            alt="Digital art project"
-            class="h-24 w-full object-cover md:h-32"
-          />
-        </div>
-      </MenuSection>
-
-      <MenuSection title="Design" side="right">
-        <p>Graphic Design</p>
-        <ul class="mb-4 ml-6 list-disc space-y-1">
-          <li>Freelance</li>
-          <li>
-            Personal Projects <span class="text-gray-500"
-              >(Designs made for fun or practice)</span>
-          </li>
-          <li>
-            Collaborative Projects <span class="text-gray-500"
-              >(College projects or side projects with friends)</span>
-          </li>
-        </ul>
-
-        <p>Editorial Design</p>
-        <ul class="ml-6 list-disc">
-          <li>College Projects</li>
-        </ul>
-
-        <div slot="images" class="grid grid-cols-2 gap-1">
-          <img
-            src={denacimiento.src}
-            alt="Graphic design project"
-            class="h-48 w-full object-cover md:h-72"
-          />
-          <img
-            src={denacimiento.src}
-            alt="Editorial design project"
-            class="h-48 w-full object-cover md:h-72"
-          />
-        </div>
-      </MenuSection>
-
-      <MenuSection title="Video">
-        <p>Animation</p>
-        <ul class="mb-4 ml-6 list-disc">
-          <li>College Projects</li>
-        </ul>
-
-        <p>Video Editing</p>
-        <ul class="ml-6 list-disc">
-          <li>Freelance</li>
-          <li>College Projects</li>
-        </ul>
-
-        <div slot="images" class="grid grid-cols-2 gap-1">
-          <div class="h-48 bg-neutral-800 md:h-72"></div>
-          <div class="h-48 bg-neutral-300 md:h-72"></div>
-        </div>
-      </MenuSection>
-
-      <MenuSection title="UX/UI" side="right">
-        <p>Websites</p>
-        <ul class="mb-4 ml-6 list-disc">
-          <li>College Projects</li>
-        </ul>
-
-        <p>Apps</p>
-        <ul class="ml-6 list-disc">
-          <li>College Projects</li>
-        </ul>
-
-        <div slot="images" class="grid grid-rows-2 gap-1">
-          <div class="h-24 bg-neutral-300 md:h-28"></div>
-          <div class="h-24 bg-neutral-800 md:h-28"></div>
-        </div>
-      </MenuSection>
+      <slot />
     </div>
   </div>
 </section>
