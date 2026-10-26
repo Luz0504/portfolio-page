@@ -3,33 +3,44 @@ import Layout from "../../layouts/Layout.astro";
 import Menu from "../../components/Menu.astro";
 import MenuSection from "../../components/MenuSection.astro";
 
-import { denacimiento, pattern } from "../../assets/images/index.js";
+import { pattern } from "../../assets/images/index.js";
+
+import Grid from "../../components/Grid.astro";
 ---
 
 <Layout>
-  <Menu pattern={pattern} title="My Projects">
-    <a href={`/projects/design`}
-      ><MenuSection title="Design">
-        <p>Proyectos de diseño gráfico, identidad visual y diseño editorial.</p>
+  <Menu pattern={pattern} title="Today's Menu">
 
-        <div slot="images" class="grid grid-cols-2 gap-4">
-          <img src={denacimiento.src} alt="Proyecto 1" class="w-full h-auto" />
-          <img src={denacimiento.src} alt="Proyecto 2" class="w-full h-auto" />
-          <img src={denacimiento.src} alt="Proyecto 3" class="w-full h-auto" />
-          <img src={denacimiento.src} alt="Proyecto 4" class="w-full h-auto" />
+    <a href={`/projects/illustration`}
+      ><MenuSection title="Design">
+        <p>Una selección de mis proyectos de diseño.</p>
+
+        <div slot="images">
+          <Grid
+            titles={[
+              "theater design",
+              "remax design",
+              "the blue terrarian",
+              "project ESDS",
+            ]}
+          />
         </div>
       </MenuSection>
     </a>
 
-    <a href={`/projects/illustration`}
-      ><MenuSection title="Illustration" side="right">
-        <p>Una selección de mis proyectos de ilustración.</p>
+    <a href={`/projects/design`}
+      ><MenuSection title="Design" side="right">
+        <p>Una selección de mis proyectos de diseño.</p>
 
-        <div slot="images" class="grid grid-cols-2 gap-4">
-          <img src={denacimiento.src} alt="Proyecto 1" class="w-full h-auto" />
-          <img src={denacimiento.src} alt="Proyecto 2" class="w-full h-auto" />
-          <img src={denacimiento.src} alt="Proyecto 3" class="w-full h-auto" />
-          <img src={denacimiento.src} alt="Proyecto 4" class="w-full h-auto" />
+        <div slot="images">
+          <Grid
+            titles={[
+              "theater design",
+              "remax design",
+              "the blue terrarian",
+              "project ESDS",
+            ]}
+          />
         </div>
       </MenuSection>
     </a>
@@ -38,11 +49,15 @@ import { denacimiento, pattern } from "../../assets/images/index.js";
       ><MenuSection title="Video editing">
         <p>Proyectos de edición y producción audiovisual.</p>
 
-        <div slot="images" class="grid grid-cols-2 gap-4">
-          <img src={denacimiento.src} alt="Proyecto 1" class="w-full h-auto" />
-          <img src={denacimiento.src} alt="Proyecto 2" class="w-full h-auto" />
-          <img src={denacimiento.src} alt="Proyecto 3" class="w-full h-auto" />
-          <img src={denacimiento.src} alt="Proyecto 4" class="w-full h-auto" />
+        <div slot="images">
+          <Grid
+            titles={[
+              "theater design",
+              "remax design",
+              "the blue terrarian",
+              "project ESDS",
+            ]}
+          />
         </div>
       </MenuSection>
     </a>
@@ -53,11 +68,15 @@ import { denacimiento, pattern } from "../../assets/images/index.js";
           Proyectos de diseño de experiencia de usuario y diseño de interfaz.
         </p>
 
-        <div slot="images" class="grid grid-cols-2 gap-4">
-          <img src={denacimiento.src} alt="Proyecto 1" class="w-full h-auto" />
-          <img src={denacimiento.src} alt="Proyecto 2" class="w-full h-auto" />
-          <img src={denacimiento.src} alt="Proyecto 3" class="w-full h-auto" />
-          <img src={denacimiento.src} alt="Proyecto 4" class="w-full h-auto" />
+        <div slot="images">
+          <Grid
+            titles={[
+              "theater design",
+              "remax design",
+              "the blue terrarian",
+              "project ESDS",
+            ]}
+          />
         </div>
       </MenuSection>
     </a>

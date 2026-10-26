@@ -1,0 +1,26 @@
+
+import MenuSection from "../components/MenuSection.astro";
+import Grid from "../components/Grid.astro";
+
+<MenuSection title="Illustration">
+  Concept Art - Character Design
+
+  - Personal Projects (Characters made for my own stories and their designs through the years)
+  - Commissions (Character designs created for others’ stories!)
+
+  Art
+
+  - Personal Projects (Art made for either fun or practice!)
+  - Fanart (Art made based on existing characters from different games or shows)
+
+  <div slot="images">
+    <Grid
+      titles={[
+        "theater design",
+        "remax design",
+        "the blue terrarian",
+        "project ESDS",
+      ]}
+    />
+  </div>
+</MenuSection>
