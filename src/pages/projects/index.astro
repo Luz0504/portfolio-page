@@ -1,84 +1,21 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import Menu from "../../components/Menu.astro";
-import MenuSection from "../../components/MenuSection.astro";
+import Illustration from "../../content/work/Illustration.mdx";
+import Design from "../../content/work/Design.mdx";
+import Ux from "../../content/work/Ux.mdx";
+import Video from "../../content/work/Video.mdx";
 
 import { pattern } from "../../assets/images/index.js";
 
-import Grid from "../../components/Grid.astro";
 ---
 
 <Layout>
+
   <Menu pattern={pattern} title="Today's Menu">
-
-    <a href={`/projects/illustration`}
-      ><MenuSection title="Design">
-        <p>Una selección de mis proyectos de diseño.</p>
-
-        <div slot="images">
-          <Grid
-            titles={[
-              "theater design",
-              "remax design",
-              "the blue terrarian",
-              "project ESDS",
-            ]}
-          />
-        </div>
-      </MenuSection>
-    </a>
-
-    <a href={`/projects/design`}
-      ><MenuSection title="Design" side="right">
-        <p>Una selección de mis proyectos de diseño.</p>
-
-        <div slot="images">
-          <Grid
-            titles={[
-              "theater design",
-              "remax design",
-              "the blue terrarian",
-              "project ESDS",
-            ]}
-          />
-        </div>
-      </MenuSection>
-    </a>
-
-    <a href={`/projects/video-editing`}
-      ><MenuSection title="Video editing">
-        <p>Proyectos de edición y producción audiovisual.</p>
-
-        <div slot="images">
-          <Grid
-            titles={[
-              "theater design",
-              "remax design",
-              "the blue terrarian",
-              "project ESDS",
-            ]}
-          />
-        </div>
-      </MenuSection>
-    </a>
-
-    <a href={`/projects/ux-ui`}
-      ><MenuSection title="UX/UI Design" side="right">
-        <p>
-          Proyectos de diseño de experiencia de usuario y diseño de interfaz.
-        </p>
-
-        <div slot="images">
-          <Grid
-            titles={[
-              "theater design",
-              "remax design",
-              "the blue terrarian",
-              "project ESDS",
-            ]}
-          />
-        </div>
-      </MenuSection>
-    </a>
+    <Illustration />
+    <Design />
+    <Video />
+    <Ux />
   </Menu>
 </Layout>

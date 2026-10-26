@@ -1,0 +1,26 @@
+
+import MenuSection from "../../components/MenuSection.astro";
+import Grid from "../../components/Grid.astro";
+
+<MenuSection title="Video">
+
+  Animation
+
+  - College Projects
+
+  Video Editing
+
+  - Freelance
+  - College Projects
+
+  <div slot="images">
+    <Grid
+      images={[
+        { title: "dry leaves", index: 8 },
+        { title: "dry leaves", index: 2 },
+        { title: "dry leaves", index: 4 },
+        { title: "dry leaves", index: 5 },
+      ]}
+    />
+  </div>
+</MenuSection>

@@ -2,38 +2,51 @@
 import { supabase } from "../lib/supabase";
 
 interface Props {
-  titles: string[];
+  images: {
+    title: string;
+    index: number;
+  }[];
 }
 
-const { titles } = Astro.props;
+const images = Astro.props.images ?? [];
+
+const titles = [...new Set(images.map((image) => image.title))];
 
 const { data: projects, error } = await supabase
   .from("projects")
-  .select("title, type, subtype, description, images")
+  .select("title, images")
   .in("title", titles);
 
 if (error) {
   console.error("Error al cargar proyectos:", error.message);
 }
 
-const selectedProjects = titles
-  .map((title) => projects?.find((p) => p.title === title))
-  .filter((project) => project != null);
+const selectedImages = images.slice(0, 4).map((selection) => {
+  const project = projects?.find(
+    (p) => p.title === selection.title
+  );
+
+  const image = Array.isArray(project?.images)
+    ? project.images[selection.index]
+    : null;
+
+  return {
+    title: selection.title,
+    index: selection.index,
+    src: image,
+  };
+});
 ---
 
-<div class="grid grid-cols-2">
-  {selectedProjects.map((project) => {
-    const image = Array.isArray(project.images)
-      ? project.images[0]
-      : null;
-
-    return image ? (
+<div class="grid grid-cols-2 gap-2">
+  {selectedImages.map((image) =>
+    image.src ? (
       <img
-        src={image}
-        alt={project.title ?? "Imagen del proyecto"}
-        class="w-300 h-50 img-fit object-cover"
+        src={image.src}
+        alt={`${image.title} - imagen ${image.index + 1}`}
+        class="w-full h-50 object-cover"
         loading="lazy"
       />
-    ) : null;
-  })}
+    ) : null
+  )}
 </div>

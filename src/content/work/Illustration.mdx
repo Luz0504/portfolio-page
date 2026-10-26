@@ -1,6 +1,6 @@
 
-import MenuSection from "../components/MenuSection.astro";
-import Grid from "../components/Grid.astro";
+import MenuSection from "../../components/MenuSection.astro";
+import Grid from "../../components/Grid.astro";
 
 <MenuSection title="Illustration">
   Concept Art - Character Design
@@ -15,11 +15,11 @@ import Grid from "../components/Grid.astro";
 
   <div slot="images">
     <Grid
-      titles={[
-        "theater design",
-        "remax design",
-        "the blue terrarian",
-        "project ESDS",
+      images={[
+        { title: "dry leaves", index: 8 },
+        { title: "dry leaves", index: 2 },
+        { title: "dry leaves", index: 4 },
+        { title: "dry leaves", index: 5 },
       ]}
     />
   </div>

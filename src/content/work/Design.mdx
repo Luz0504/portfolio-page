@@ -1,0 +1,27 @@
+
+import MenuSection from "../../components/MenuSection.astro";
+import Grid from "../../components/Grid.astro";
+
+<MenuSection title="Design" side="right">
+  
+  Graphic Design
+
+  - Freelance
+  - Personal Projects (Designs made for fun or practice)
+  - Collaborative Projects (Designs made for college projects or side projects with friends)
+
+  Editorial Design
+
+  - College Projects
+
+  <div slot="images">
+    <Grid
+      images={[
+        { title: "dry leaves", index: 8 },
+        { title: "dry leaves", index: 2 },
+        { title: "dry leaves", index: 4 },
+        { title: "dry leaves", index: 5 },
+      ]}
+    />
+  </div>
+</MenuSection>
