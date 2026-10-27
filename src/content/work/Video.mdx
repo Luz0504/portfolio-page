@@ -16,11 +16,18 @@ import Grid from "../../components/Grid.astro";
   <div slot="images">
     <Grid
       images={[
-        { title: "dry leaves", index: 8 },
-        { title: "dry leaves", index: 2 },
-        { title: "dry leaves", index: 4 },
-        { title: "dry leaves", index: 5 },
+        { title: "2d animations", index: 1 }
       ]}
     />
   </div>
+
+  <a
+  href="projects/illustration"
+  className="group inline-flex items-center justify-center gap-3 rounded-xl border-2 border-amber-800 bg-amber-300 px-6 py-3 font-bold text-amber-950"
+>
+  <span>Check it out!</span>
+  <span className="transition-transform duration-200 group-hover:translate-x-1">
+    →
+  </span>
+</a>
 </MenuSection>

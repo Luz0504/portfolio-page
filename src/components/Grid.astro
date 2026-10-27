@@ -9,7 +9,6 @@ interface Props {
 }
 
 const images = Astro.props.images ?? [];
-
 const titles = [...new Set(images.map((image) => image.title))];
 
 const { data: projects, error } = await supabase
@@ -21,32 +20,173 @@ if (error) {
   console.error("Error al cargar proyectos:", error.message);
 }
 
-const selectedImages = images.slice(0, 4).map((selection) => {
-  const project = projects?.find(
-    (p) => p.title === selection.title
-  );
+const selectedImages = images
+  .slice(0, 4)
+  .map((selection) => {
+    const project = projects?.find(
+      (p) => p.title === selection.title
+    );
 
-  const image = Array.isArray(project?.images)
-    ? project.images[selection.index]
-    : null;
+    const src = Array.isArray(project?.images)
+      ? project.images[selection.index]
+      : null;
 
-  return {
-    title: selection.title,
-    index: selection.index,
-    src: image,
-  };
-});
+    const isVideo =
+      typeof src === "string" &&
+      /\.(mp4|webm|ogg|mov)(\?.*)?$/i.test(src);
+
+    return {
+      title: selection.title,
+      index: selection.index,
+      src,
+      isVideo,
+    };
+  })
+  .filter((item) => item.src);
+
+const count = selectedImages.length;
 ---
 
 <div class="grid grid-cols-2 gap-2">
-  {selectedImages.map((image) =>
-    image.src ? (
-      <img
-        src={image.src}
-        alt={`${image.title} - imagen ${image.index + 1}`}
-        class="w-full h-50 object-cover"
-        loading="lazy"
-      />
-    ) : null
-  )}
+  {
+    selectedImages.map((item, index) => (
+      <div
+        class:list={[
+          "min-w-0 overflow-hidden",
+          (count === 1 || count === 2 || (count === 3 && index === 2)) &&
+            "col-span-2",
+        ]}
+      >
+        {item.isVideo ? (
+          <video
+            src={item.src}
+            controls
+            playsinline
+            preload="metadata"
+            data-lightbox-video
+            data-full-src={item.src}
+            data-title={`${item.title} - video ${item.index + 1}`}
+            class="w-full h-50 object-cover cursor-pointer"
+            aria-label={`${item.title} - video ${item.index + 1}`}
+          />
+        ) : (
+          <img
+            src={item.src}
+            alt={`${item.title} - imagen ${item.index + 1}`}
+            data-lightbox-image
+            data-full-src={item.src}
+            data-title={`${item.title} - imagen ${item.index + 1}`}
+            class="w-full h-50 object-cover cursor-zoom-in"
+            loading="lazy"
+          />
+        )}
+      </div>
+    ))
+  }
 </div>
+
+<!-- Previsualización -->
+<div
+  id="lightbox"
+  class="fixed inset-0 z-50 hidden items-center justify-center bg-black/85 p-4"
+  role="dialog"
+  aria-modal="true"
+  aria-label="Previsualización multimedia"
+>
+  
+<button
+  id="lightbox-close"
+  type="button"
+  class="absolute right-5 top-5 z-10 flex h-10 w-10 justify-center rounded-full bg-black/40 text-2xl text-white backdrop-blur-sm transition hover:bg-black/70"
+  aria-label="Cerrar previsualización"
+>
+  &times;
+</button>
+
+
+  <div
+    id="lightbox-content"
+    class="flex max-h-[90vh] max-w-[90vw] items-center justify-center"
+  ></div>
+</div>
+
+<script>
+  const lightbox = document.querySelector<HTMLDivElement>("#lightbox");
+  const content = document.querySelector<HTMLDivElement>("#lightbox-content");
+  const closeButton = document.querySelector<HTMLButtonElement>("#lightbox-close");
+
+  function closeLightbox() {
+    if (!lightbox || !content) return;
+
+    lightbox.classList.add("hidden");
+    lightbox.classList.remove("flex");
+    content.replaceChildren();
+    document.body.style.overflow = "";
+  }
+
+  function openLightbox(src: string, title: string, isVideo: boolean) {
+    if (!lightbox || !content) return;
+
+    content.replaceChildren();
+
+    let media: HTMLImageElement | HTMLVideoElement;
+
+    if (isVideo) {
+      const video = document.createElement("video");
+      video.src = src;
+      video.controls = true;
+      video.autoplay = true;
+      video.playsInline = true;
+      video.preload = "metadata";
+      media = video;
+    } else {
+      const image = document.createElement("img");
+      image.src = src;
+      image.alt = title;
+      media = image;
+    }
+
+    media.className =
+      "block max-h-[85vh] max-w-[90vw] object-contain";
+
+    content.appendChild(media);
+
+    lightbox.classList.remove("hidden");
+    lightbox.classList.add("flex");
+    document.body.style.overflow = "hidden";
+  }
+
+  document.querySelectorAll<HTMLImageElement>("[data-lightbox-image]").forEach((image) => {
+    image.addEventListener("click", () => {
+      openLightbox(
+        image.dataset.fullSrc ?? image.src,
+        image.dataset.title ?? image.alt,
+        false
+      );
+    });
+  });
+
+  document.querySelectorAll<HTMLVideoElement>("[data-lightbox-video]").forEach((video) => {
+    video.addEventListener("dblclick", () => {
+      openLightbox(
+        video.dataset.fullSrc ?? video.src,
+        video.dataset.title ?? "",
+        true
+      );
+    });
+  });
+
+  closeButton?.addEventListener("click", closeLightbox);
+
+  lightbox?.addEventListener("click", (event) => {
+    if (event.target === lightbox) {
+      closeLightbox();
+    }
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      closeLightbox();
+    }
+  });
+</script>
