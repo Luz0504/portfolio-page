@@ -6,13 +6,23 @@ import Design from "../../content/work/Design.mdx";
 import Ux from "../../content/work/Ux.mdx";
 import Video from "../../content/work/Video.mdx";
 
-import { pattern } from "../../assets/images/index.js";
-
+import {
+  pattern,
+  figma,
+  firealpaca,
+  photoshop,
+  after,
+  premiere,
+  illustrator,
+} from "../../assets/images/index.js";
 ---
 
 <Layout>
-
-  <Menu pattern={pattern} title="Today's Menu">
+  <Menu
+    pattern={pattern}
+    title="Today's Menu"
+    programs={[firealpaca, figma, after, premiere, photoshop, illustrator]}
+  >
     <Illustration />
     <Design />
     <Video />

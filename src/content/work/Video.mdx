@@ -1,17 +1,68 @@
-
 import MenuSection from "../../components/MenuSection.astro";
 import Grid from "../../components/Grid.astro";
+import Button from "../../components/Button.astro";
 
 <MenuSection title="Video">
 
-  Animation
+  <div className="space-y-7">
 
-  - College Projects
+    {/* ANIMATION */}
+    <div>
+      <span className="text-[10px] uppercase tracking-widest text-[#d18b42]">
+        01 / Motion Design
+      </span>
 
-  Video Editing
+      <h3 className="mt-1 text-2xl font-bold text-[#78302f]">
+        Animation
+      </h3>
 
-  - Freelance
-  - College Projects
+      <p className="mt-1 text-sm italic text-neutral-500">
+        Bringing ideas and illustrations to life.
+      </p>
+
+      <ul className="mt-4 space-y-3 text-sm text-neutral-700">
+        <li>
+          <span className="font-semibold text-[#78302f]">College Projects</span>
+          <p className="mt-1 text-xs leading-relaxed">
+            Animated pieces created through university projects, exploring movement and visual storytelling.
+          </p>
+        </li>
+      </ul>
+    </div>
+
+    <div className="h-px bg-[#f3d9cc]"></div>
+
+    {/* VIDEO EDITING */}
+    <div>
+      <span className="text-[10px] uppercase tracking-widest text-[#d18b42]">
+        02 / Post-production
+      </span>
+
+      <h3 className="mt-1 text-2xl font-bold text-[#78302f]">
+        Video Editing
+      </h3>
+
+      <p className="mt-1 text-sm italic text-neutral-500">
+        Crafting stories through images, sound and rhythm.
+      </p>
+
+      <ul className="mt-4 space-y-3 text-sm text-neutral-700">
+        <li>
+          <span className="font-semibold text-[#78302f]">Freelance</span>
+          <p className="mt-1 text-xs leading-relaxed">
+            Video editing for independent clients and creative projects.
+          </p>
+        </li>
+        <li>
+          <span className="font-semibold text-[#78302f]">College Projects</span>
+          <p className="mt-1 text-xs leading-relaxed">
+            Video pieces developed for university assignments and creative experiments.
+          </p>
+        </li>
+      </ul>
+    </div>
+
+  </div>
 
   <div slot="images">
     <Grid
@@ -21,13 +72,9 @@ import Grid from "../../components/Grid.astro";
     />
   </div>
 
-  <a
-  href="projects/illustration"
-  className="group inline-flex items-center justify-center gap-3 rounded-xl border-2 border-amber-800 bg-amber-300 px-6 py-3 font-bold text-amber-950"
->
-  <span>Check it out!</span>
-  <span className="transition-transform duration-200 group-hover:translate-x-1">
-    →
-  </span>
-</a>
+  <Button 
+  href="/projects/video-editing"
+  label="View Project"
+  target="_self"/>
+
 </MenuSection>

@@ -1,0 +1,282 @@
+
+import MenuSection from "../../components/MenuSection.astro";
+import Grid from "../../components/Grid.astro";
+import Carrusel from "../../components/Carrusel.astro";
+
+{/* CONCEPT ART */}
+<div className="mb-8 mt-4">
+  <span className="text-[10px] uppercase tracking-widest text-[#d18b42]">
+    01 / Illustration
+  </span>
+  <h2 className="mt-1 text-3xl font-bold uppercase tracking-tight text-[#78302f] md:text-4xl">
+    Concept Art - Character Design
+  </h2>
+</div>
+
+<MenuSection title="Dry Leaves" side="right">
+
+  <div className="space-y-4">
+    <div className="flex justify-end">
+      <span className="text-[10px] uppercase tracking-widest text-neutral-500">
+        2023–Present
+      </span>
+    </div>
+
+    <p className="text-xs leading-relaxed text-neutral-700">
+      This is a story I've been working on for many years, and it's
+      still in development.
+    </p>
+
+    <p className="text-xs leading-relaxed text-neutral-700">
+      It follows four young adults searching for their lost friend,
+      who disappeared in the woods near their town seven years ago.
+    </p>
+
+    <h4 className="pt-1 text-sm font-semibold text-[#78302f]">
+      Check out the process!
+    </h4>
+
+    <Carrusel
+      images={[
+        { title: "art collection", index: 4 },
+        { title: "art collection", index: 6 },
+        { title: "the blue terrarian", index: 2 },
+        { title: "fanart collection", index: 4 },
+      ]}
+    />
+  </div>
+
+  <div slot="images">
+    <Grid
+      images={[
+        { title: "art collection", index: 4 },
+        { title: "art collection", index: 6 },
+        { title: "the blue terrarian", index: 2 },
+        { title: "fanart collection", index: 4 },
+      ]}
+    />
+  </div>
+
+</MenuSection>
+
+<MenuSection title="Story concepts" side="right">
+
+  <div className="space-y-4">
+    <p className="text-xs leading-relaxed text-neutral-700">
+      Here are a few story concepts I've been developing! One of
+      them features a cult of horse-like people called "Unicats",
+      who worship a goddess from the moon.
+    </p>
+
+    <p className="text-xs leading-relaxed text-neutral-700">
+      The other concept explores a form of paranormal activity
+      that completely erases missing people from every picture
+      they appear in.
+    </p>
+  </div>
+
+  <div slot="images">
+    <Grid images={[
+      { title: "art collection", index: 4 },
+      { title: "art collection", index: 6 }
+    ]} />
+  </div>
+
+</MenuSection>
+
+{/* COMMISSIONS */}
+<div className="mb-8 mt-12">
+  <span className="text-[10px] uppercase tracking-widest text-[#d18b42]">
+    02 / Commissioned Work
+  </span>
+  <h2 className="mt-1 text-3xl font-bold uppercase tracking-tight text-[#78302f] md:text-4xl">
+    Commissions
+  </h2>
+</div>
+
+<MenuSection title="Original characters based on a videogame" side="right">
+
+  <div className="space-y-4">
+    <div className="flex justify-end">
+      <span className="text-[10px] uppercase tracking-widest text-neutral-500">
+        2024–Present
+      </span>
+    </div>
+
+    <p className="text-xs leading-relaxed text-neutral-700">
+      A collection of artwork I've created for a client, featuring
+      their original characters inspired by the videogame "Terraria".
+    </p>
+
+    <p className="text-xs leading-relaxed text-neutral-700">
+      Most of the artwork focuses on their two main characters,
+      Lapis and Dorian, and their many alternate versions from
+      different timelines!
+    </p>
+
+    <h4 className="pt-1 text-sm font-semibold text-[#78302f]">
+      Check out the rest!
+    </h4>
+
+    <Carrusel
+      images={[
+        { title: "art collection", index: 4 },
+        { title: "art collection", index: 6 },
+        { title: "the blue terrarian", index: 2 },
+        { title: "fanart collection", index: 4 },
+      ]}
+    />
+  </div>
+
+  <div slot="images">
+    <Grid images={[
+      { title: "art collection", index: 4 },
+      { title: "art collection", index: 6 },
+      { title: "the blue terrarian", index: 2 },
+      { title: "fanart collection", index: 4 },
+    ]} />
+  </div>
+
+</MenuSection>
+
+<MenuSection title="Project ESDS">
+
+  <div className="space-y-4">
+    <div className="flex justify-end">
+      <span className="text-[10px] uppercase tracking-widest text-neutral-500">
+        2023–2024
+      </span>
+    </div>
+
+    <p className="text-xs leading-relaxed text-neutral-700">
+      Character designs created for a fan-made visual novel
+      project based on the Nintendo videogame "EarthBound",
+      called "Project ESDS". Some characters were original
+      creations, while others were based on existing characters.
+    </p>
+
+    <p className="text-xs leading-relaxed text-neutral-700">
+      One example is a group of characters inspired by the
+      different playing card suits: hearts, clubs, spades and
+      diamonds, each with their own personality.
+    </p>
+
+    <h4 className="pt-1 text-sm font-semibold text-[#78302f]">
+      Check out the rest!
+    </h4>
+
+    <Carrusel
+      images={[
+        { title: "art collection", index: 4 },
+        { title: "art collection", index: 6 },
+        { title: "the blue terrarian", index: 2 },
+        { title: "fanart collection", index: 4 },
+      ]}
+    />
+  </div>
+
+  <div slot="images">
+    <Grid images={[
+      { title: "art collection", index: 4 },
+      { title: "art collection", index: 6 },
+      { title: "the blue terrarian", index: 2 },
+      { title: "fanart collection", index: 4 },
+    ]} />
+  </div>
+
+</MenuSection>
+
+{/* ART */}
+<div className="mb-8 mt-12">
+  <span className="text-[10px] uppercase tracking-widest text-[#d18b42]">
+    03 / Personal Work
+  </span>
+  <h2 className="mt-1 text-3xl font-bold uppercase tracking-tight text-[#78302f] md:text-4xl">
+    Art
+  </h2>
+</div>
+
+<MenuSection title="Characters and others">
+
+  <div className="space-y-4">
+    <div className="flex justify-end">
+      <span className="text-[10px] uppercase tracking-widest text-neutral-500">
+        2023–Present
+      </span>
+    </div>
+
+    <p className="text-xs leading-relaxed text-neutral-700">
+      Recent artwork featuring my own characters and my cartoon
+      persona. Most of these pieces were made for fun, practice
+      or for my Instagram, where I share all kinds of drawings.
+    </p>
+
+    <h4 className="pt-1 text-sm font-semibold text-[#78302f]">
+      Here's more!
+    </h4>
+
+    <Carrusel
+      images={[
+        { title: "art collection", index: 4 },
+        { title: "art collection", index: 6 },
+        { title: "the blue terrarian", index: 2 },
+        { title: "fanart collection", index: 4 },
+      ]}
+    />
+  </div>
+
+  <div slot="images">
+    <Grid images={[
+      { title: "art collection", index: 4 },
+      { title: "art collection", index: 6 },
+      { title: "the blue terrarian", index: 2 },
+      { title: "fanart collection", index: 4 },
+    ]} />
+  </div>
+
+</MenuSection>
+
+<MenuSection title="Fanart" side="right">
+
+  <div className="space-y-4">
+    <div className="flex justify-end">
+      <span className="text-[10px] uppercase tracking-widest text-neutral-500">
+        2023–Present
+      </span>
+    </div>
+
+    <p className="text-xs leading-relaxed text-neutral-700">
+      Artwork inspired by existing characters from different
+      shows, videogames and movies.
+    </p>
+
+    <p className="text-xs leading-relaxed text-neutral-700">
+      Many of these pieces were created for art fairs I've
+      attended, where I sold my work as keychains, stickers
+      and prints!
+    </p>
+
+    <h4 className="pt-1 text-sm font-semibold text-[#78302f]">
+      Here's more!
+    </h4>
+
+    <Carrusel
+      images={[
+        { title: "art collection", index: 4 },
+        { title: "art collection", index: 6 },
+        { title: "the blue terrarian", index: 2 },
+        { title: "fanart collection", index: 4 },
+      ]}
+    />
+  </div>
+
+  <div slot="images">
+    <Grid images={[
+      { title: "art collection", index: 4 },
+      { title: "art collection", index: 6 },
+      { title: "the blue terrarian", index: 2 },
+      { title: "fanart collection", index: 4 },
+    ]} />
+  </div>
+
+</MenuSection>

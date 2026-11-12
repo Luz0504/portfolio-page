@@ -1,49 +1,103 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import { telephone, aboutcard, menu } from "../assets/images";
-
 ---
 
 <Layout>
-  <main class="flex flex-col items-center justify-center px-10">
     <section
-      class="mx-auto grid max-w-375 grid-cols-2 items-center gap-6 px-6 py-12 md:min-h-[calc(100vh-5rem)] md:grid-cols-3 md:gap-10 md:px-12 lg:px-16"
+      class="mx-auto grid w-full max-w-5xl grid-cols-2 items-center gap-x-5 gap-y-8 md:grid-cols-12 md:gap-x-8 md:gap-y-3"
     >
-      <a
-        href="/projects"
-        aria-label="Ver proyectos"
-        class="block transition duration-300 hover:-rotate-2 hover:scale-105"
+    
+      <div
+        class="group relative col-span-2 mx-auto w-full max-w-85 md:col-span-5 md:col-start-2 md:row-span-2 md:row-start-1 md:max-w-none"
       >
-        <img
-          src={menu.src}
-          alt="Menú de proyectos"
-          class="h-auto w-full drop-shadow-lg"
-        />
-      </a>
 
-      <a
-        href="/about"
-        aria-label="Conocer más sobre mí"
-        class="block transition duration-300 hover:-rotate-2 hover:scale-105"
-      >
-        <img
-          src={aboutcard.src}
-          alt="Hi! My name is María Luz Sueldo"
-          class="h-auto w-full drop-shadow-lg"
-        />
-      </a>
+        <div
+          class="pointer-events-none absolute right-full top-1/2 z-10 mr-5 hidden -translate-x-3 -translate-y-1/2 flex-col items-end gap-20 whitespace-nowrap opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100 md:flex"
+        >
+          <p>
+            <span
+              class="text-xl font-semibold uppercase tracking-wider"
+              >Illustration</span>
+          </p>
+          <p>
+            <span
+              class="text-xl font-semibold uppercase tracking-wider"
+              >Design</span>
+          </p>
+          <p>
+            <span
+              class="text-xl font-semibold uppercase tracking-wider"
+              >Video Editing</span>
+          </p>
+          <p>
+            <span
+              class="text-xl font-semibold uppercase tracking-wider"
+              >UX/UI</span>
+          </p>
+        </div>
 
-      <a
-        href="/contact"
-        aria-label="Contactarme"
-        class="col-span-2 mx-auto block w-3/4 transition duration-300 hover:rotate-3 hover:scale-105 md:col-span-1 md:w-full"
+        <a
+          href="/projects"
+          aria-label="Ver proyectos"
+          class="block transition-transform duration-500 hover:-rotate-2 hover:scale-[1.04]"
+        >
+          <img
+            src={menu.src}
+            alt="Menú de proyectos"
+            class="h-auto w-full drop-shadow-[5px_8px_8px_rgba(0,0,0,0.18)] transition-all duration-500 hover:drop-shadow-[8px_12px_10px_rgba(0,0,0,0.22)]"
+          />
+        </a>
+      </div>
+
+      <div
+        class="group relative col-span-1 mx-auto w-full max-w-57.5 rotate-2 md:col-span-4 md:col-start-8 md:row-start-1 md:mt-12 md:max-w-none"
       >
-        <img
-          src={telephone.src}
-          alt="Teléfono vintage para contacto"
-          class="h-auto w-full drop-shadow-lg"
-        />
-      </a>
+        <p>
+          <span
+            aria-hidden="true"
+            class="pointer-events-none absolute left-full top-1/2 z-10 ml-5 hidden -translate-x-3 -translate-y-1/2 whitespace-nowrap text-xl font-semibold uppercase tracking-wider opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100 md:block"
+          >
+            About me!
+          </span>
+        </p>
+
+        <a
+          href="/about"
+          aria-label="Conocer más sobre mí"
+          class="block transition-transform duration-500 hover:-rotate-1 hover:scale-105"
+        >
+          <img
+            src={aboutcard.src}
+            alt="Hi! My name is María Luz Sueldo"
+            class="h-auto w-full drop-shadow-[5px_8px_8px_rgba(0,0,0,0.18)]"
+          />
+        </a>
+      </div>
+
+      <div
+        class="group relative col-span-1 mx-auto w-full max-w-45 -rotate-6 md:col-span-4 md:col-start-8 md:row-start-2 md:mt-2 md:max-w-550"
+      >
+        <p>
+          <span
+            aria-hidden="true"
+            class="pointer-events-none absolute left-full top-1/2 z-10 ml-5 hidden -translate-x-3 -translate-y-1/2 whitespace-nowrap text-xl font-semibold uppercase tracking-wider opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100 md:block"
+          >
+            Ready to order?
+          </span>
+        </p>
+
+        <a
+          href="/contact"
+          aria-label="Contactarme"
+          class="block transition-transform duration-500 hover:rotate-0 hover:scale-110"
+        >
+          <img
+            src={telephone.src}
+            alt="Teléfono vintage para contacto"
+            class="h-auto w-auto drop-shadow-[5px_8px_8px_rgba(0,0,0,0.2)]"
+          />
+        </a>
+      </div>
     </section>
-  </main>
 </Layout>

@@ -1,9 +1,59 @@
+
 ---
 import Layout from "../layouts/Layout.astro";
+import { aboutcard } from "../assets/images";
 ---
 
 <Layout>
-  <h1 class="text-5xl font-bold">Hello!</h1>
 
-  <p>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
+    <section class="mx-auto max-w-5xl">
+
+      <!-- About content -->
+      <div class="grid items-center gap-10 md:grid-cols-2 md:gap-16">
+
+        <!-- Illustration -->
+        <div class="relative mx-auto w-full max-w-[380px]">
+          <img
+            src={aboutcard.src}
+            alt="Ilustración de una persona con un lápiz y una computadora"
+            class="w-full drop-shadow-[5px_8px_8px_rgba(0,0,0,0.18)] transition-all duration-500 hover:-rotate-2 hover:scale-[1.03] hover:drop-shadow-[8px_12px_10px_rgba(0,0,0,0.22)]"
+          />
+        </div>
+
+        <!-- Text -->
+        <div class="space-y-6">
+
+          <div class="inline-block border-b-2 border-[#f58d7b] pb-2">
+            <span class="text-sm font-bold uppercase tracking-widest">
+              About me!
+            </span>
+          </div>
+
+          <p class="text-xl leading-8 md:text-base">
+            I’m a 22-year-old Multimedia Technology student in my final year
+            of university, with a strong interest in illustration, graphic
+            design, video editing, and UX/UI design.
+          </p>
+
+          <p class="text-xl leading-8 md:text-base">
+            I enjoy exploring different creative fields and combining visual
+            storytelling with thoughtful design to create engaging and
+            meaningful experiences.
+          </p>
+
+          <p class="text-xl leading-8 md:text-base">
+            I’m always looking for new ways to experiment, learn, and bring
+            ideas to life through my work.
+          </p>
+
+          <div class="flex items-center gap-3 pt-2">
+            <span class="h-[2px] w-10 bg-[#f58d7b]"></span>
+            <span class="text-[10px] font-semibold uppercase tracking-[0.2em]">
+              Design · Creativity · Curiosity
+            </span>
+          </div>
+
+        </div>
+      </div>
+    </section>
 </Layout>

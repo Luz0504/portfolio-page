@@ -1,0 +1,21 @@
+---
+interface Props {
+  href: string;
+  label?: string;
+  target?: "_blank" | "_self";
+}
+
+const { href, label = "View project", target = "_self" } = Astro.props;
+---
+
+<a
+  href={href}
+  target={target}
+  rel={target === "_blank" ? "noopener noreferrer" : undefined}
+  class="group mt-6 inline-flex items-center gap-3 rounded-full border-2 border-[#f58d7b] bg-white px-6 py-2.5 text-sm font-semibold text-[#78302f] transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#fce1a8] hover:shadow-[3px_3px_0px_#f58d7b]"
+>
+  {label}
+  <span class="transition-transform duration-200 group-hover:translate-x-1">
+    →
+  </span>
+</a>

@@ -1,0 +1,134 @@
+
+import MenuSection from "../../components/MenuSection.astro";
+import Grid from "../../components/Grid.astro";
+import Carrusel from "../../components/Carrusel.astro";
+
+{/* WEBSITES */}
+<div className="mb-8 mt-4">
+  <span className="text-[10px] uppercase tracking-widest text-[#d18b42]">
+    01 / Web Design
+  </span>
+  <h2 className="mt-1 text-3xl font-bold uppercase tracking-tight text-[#78302f] md:text-4xl">
+    Websites
+  </h2>
+</div>
+
+<MenuSection title="Tally Hall" side="right">
+
+  <div className="space-y-4">
+    <div className="flex justify-end">
+      <span className="text-[10px] uppercase tracking-widest text-neutral-500">
+        2026
+      </span>
+    </div>
+
+    <p className="text-xs leading-relaxed text-neutral-700">
+      I decided to redesign an old website I had created during
+      my first year of college as a practice project, inspired by
+      the American indie band "Tally Hall".
+    </p>
+
+    <p className="text-xs leading-relaxed text-neutral-700">
+      The idea was to create a fan community platform that
+      worked like a forum, bringing together events hosted by
+      the band members, song lyrics and posts where fans could
+      share their thoughts and discuss the band.
+    </p>
+  </div>
+
+  <div slot="images">
+    <Grid
+      images={[
+        { title: "art collection", index: 4 },
+        { title: "art collection", index: 6 },
+        { title: "the blue terrarian", index: 2 }
+      ]}
+    />
+  </div>
+
+</MenuSection>
+
+<MenuSection title="Original version" side="right">
+
+  <div className="space-y-4">
+    <div className="flex justify-end">
+      <span className="text-[10px] uppercase tracking-widest text-neutral-500">
+        2023
+      </span>
+    </div>
+
+    <p className="text-xs leading-relaxed text-neutral-700">
+      The original version of the website, created as a first
+      exploration of web design and the band's visual identity.
+    </p>
+  </div>
+
+  <div slot="images">
+    <Grid
+      images={[
+        { title: "art collection", index: 4 }
+      ]}
+    />
+  </div>
+
+</MenuSection>
+
+{/* APPS */}
+<div className="mb-8 mt-12">
+  <span className="text-[10px] uppercase tracking-widest text-[#d18b42]">
+    02 / App Design
+  </span>
+  <h2 className="mt-1 text-3xl font-bold uppercase tracking-tight text-[#78302f] md:text-4xl">
+    Apps
+  </h2>
+</div>
+
+<MenuSection title="Gamification" side="right">
+
+  <div className="space-y-4">
+    <div className="flex justify-end">
+      <span className="text-[10px] uppercase tracking-widest text-neutral-500">
+        2026
+      </span>
+    </div>
+
+    <p className="text-xs leading-relaxed text-neutral-700">
+      For my Gamification class during my final year of college,
+      I had to pitch a gamified app. I decided to explore the
+      concept of behavior change, focusing on people who want
+      to grow their social media presence but struggle with
+      self-doubt caused by likes, followers and views.
+    </p>
+
+    <p className="text-xs leading-relaxed text-neutral-700">
+      The app was mainly aimed at people who were just starting
+      out and wanted to focus on creating content rather than
+      comparing their numbers with others.
+    </p>
+
+    <p className="text-xs leading-relaxed text-neutral-700">
+      Each user would have their own greenhouse, where they
+      could take care of plants by completing missions, filling
+      a watering can and watering them. Each plant represented
+      a social media platform the user wanted to grow on.
+    </p>
+
+    <p className="text-xs leading-relaxed text-neutral-700">
+      For example, someone interested in growing on YouTube
+      and TikTok would have two different plants, each with
+      the corresponding platform's colors.
+    </p>
+  </div>
+
+  <div slot="images">
+    <Carrusel
+      images={[
+        { title: "art collection", index: 4 },
+        { title: "art collection", index: 6 },
+        { title: "the blue terrarian", index: 2 },
+        { title: "fanart collection", index: 4 },
+      ]}
+    />
+  </div>
+
+</MenuSection>

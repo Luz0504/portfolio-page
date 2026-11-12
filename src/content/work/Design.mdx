@@ -1,18 +1,74 @@
-
 import MenuSection from "../../components/MenuSection.astro";
 import Grid from "../../components/Grid.astro";
+import Button from "../../components/Button.astro";
 
 <MenuSection title="Design" side="right">
-  
-  Graphic Design
 
-  - Freelance
-  - Personal Projects (Designs made for fun or practice)
-  - Collaborative Projects (Designs made for college projects or side projects with friends)
+  <div className="space-y-7">
 
-  Editorial Design
+    {/* GRAPHIC DESIGN */}
+    <div>
+      <span className="text-[10px] uppercase tracking-widest text-[#d18b42]">
+        01 / Visual Communication
+      </span>
 
-  - College Projects
+      <h3 className="mt-1 text-2xl font-bold text-[#78302f]">
+        Graphic Design
+      </h3>
+
+      <p className="mt-1 text-sm italic text-neutral-500">
+        Visual ideas brought to life through design.
+      </p>
+
+      <ul className="mt-4 space-y-3 text-sm text-neutral-700">
+        <li>
+          <span className="font-semibold text-[#78302f]">Freelance</span>
+          <p className="mt-1 text-xs leading-relaxed">
+            Design work created for clients and independent projects.
+          </p>
+        </li>
+        <li>
+          <span className="font-semibold text-[#78302f]">Personal Projects</span>
+          <p className="mt-1 text-xs leading-relaxed">
+            Designs made for fun, practice and creative exploration.
+          </p>
+        </li>
+        <li>
+          <span className="font-semibold text-[#78302f]">Collaborative Projects</span>
+          <p className="mt-1 text-xs leading-relaxed">
+            Designs developed for college assignments and side projects with friends.
+          </p>
+        </li>
+      </ul>
+    </div>
+
+    <div className="h-px bg-[#f3d9cc]"></div>
+
+    {/* EDITORIAL DESIGN */}
+    <div>
+      <span className="text-[10px] uppercase tracking-widest text-[#d18b42]">
+        02 / Print & Layout
+      </span>
+
+      <h3 className="mt-1 text-2xl font-bold text-[#78302f]">
+        Editorial Design
+      </h3>
+
+      <p className="mt-1 text-sm italic text-neutral-500">
+        Stories told through typography and composition.
+      </p>
+
+      <ul className="mt-4 space-y-3 text-sm text-neutral-700">
+        <li>
+          <span className="font-semibold text-[#78302f]">College Projects</span>
+          <p className="mt-1 text-xs leading-relaxed">
+            Editorial pieces exploring layout, typography and visual storytelling.
+          </p>
+        </li>
+      </ul>
+    </div>
+
+  </div>
 
   <div slot="images">
     <Grid
@@ -25,13 +81,9 @@ import Grid from "../../components/Grid.astro";
     />
   </div>
 
-  <a
-  href="projects/illustration"
-  className="group inline-flex items-center justify-center gap-3 rounded-xl border-2 border-amber-800 bg-amber-300 px-6 py-3 font-bold text-amber-950"
->
-  <span>Check it out!</span>
-  <span className="transition-transform duration-200 group-hover:translate-x-1">
-    →
-  </span>
-</a>
+  <Button 
+  href="/projects/design"
+  label="View Project"
+  target="_self"/>
+
 </MenuSection>

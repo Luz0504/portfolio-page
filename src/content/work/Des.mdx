@@ -1,0 +1,341 @@
+
+import MenuSection from "../../components/MenuSection.astro";
+import Grid from "../../components/Grid.astro";
+import Carrusel from "../../components/Carrusel.astro";
+
+{/* GRAPHIC DESIGN */}
+<div className="mb-8 mt-4">
+  <span className="text-[10px] uppercase tracking-widest text-[#d18b42]">
+    01 / Visual Communication
+  </span>
+  <h2 className="mt-1 text-3xl font-bold uppercase tracking-tight text-[#78302f] md:text-4xl">
+    Graphic Design
+  </h2>
+</div>
+
+{/* FREELANCE */}
+<MenuSection title="RE/MAX" side="right">
+
+  <div className="space-y-4">
+    <div className="flex justify-end">
+      <span className="text-[10px] uppercase tracking-widest text-neutral-500">
+        2024–Present
+      </span>
+    </div>
+
+    <p className="text-xs leading-relaxed text-neutral-700">
+      I've created flyers, Instagram posts and thumbnails for
+      a client working at RE/MAX. These designs were created
+      for both digital and print purposes.
+    </p>
+
+    <h4 className="pt-1 text-sm font-semibold text-[#78302f]">
+      Check out the rest!
+    </h4>
+
+    <Carrusel
+      images={[
+        { title: "art collection", index: 4 },
+        { title: "art collection", index: 6 },
+        { title: "the blue terrarian", index: 2 },
+        { title: "fanart collection", index: 4 },
+      ]}
+    />
+  </div>
+
+  <div slot="images">
+    <Grid
+      images={[
+        { title: "art collection", index: 4 },
+        { title: "art collection", index: 6 },
+        { title: "the blue terrarian", index: 2 },
+        { title: "fanart collection", index: 4 },
+      ]}
+    />
+  </div>
+
+</MenuSection>
+
+<MenuSection title="Theater">
+
+  <div className="space-y-4">
+    <div className="flex justify-end">
+      <span className="text-[10px] uppercase tracking-widest text-neutral-500">
+        2024–Present
+      </span>
+    </div>
+
+    <p className="text-xs leading-relaxed text-neutral-700">
+      From Instagram posts to billboards, I've created a variety
+      of designs for a client who has performed in several
+      independent theater productions.
+    </p>
+
+    <p className="text-xs leading-relaxed text-neutral-700">
+      Some of the designs for the play "Aquí terapia" were
+      displayed at Paseo La Plaza and featured on the
+      Plateanet website.
+    </p>
+
+    <h4 className="pt-1 text-sm font-semibold text-[#78302f]">
+      Check out the rest!
+    </h4>
+
+    <Carrusel
+      images={[
+        { title: "art collection", index: 4 },
+        { title: "art collection", index: 6 },
+        { title: "the blue terrarian", index: 2 },
+        { title: "fanart collection", index: 4 },
+      ]}
+    />
+  </div>
+
+  <div slot="images">
+    <Grid
+      images={[
+        { title: "art collection", index: 4 },
+        { title: "art collection", index: 6 },
+        { title: "the blue terrarian", index: 2 },
+        { title: "fanart collection", index: 4 },
+      ]}
+    />
+  </div>
+
+</MenuSection>
+
+{/* PERSONAL PROJECTS */}
+<div className="mb-8 mt-12">
+  <span className="text-[10px] uppercase tracking-widest text-[#d18b42]">
+    02 / Independent Work
+  </span>
+  <h2 className="mt-1 text-3xl font-bold uppercase tracking-tight text-[#78302f] md:text-4xl">
+    Personal Projects
+  </h2>
+</div>
+
+<MenuSection title="Clave Humana" side="right">
+
+  <div className="space-y-4">
+    <div className="flex justify-end">
+      <span className="text-[10px] uppercase tracking-widest text-neutral-500">
+        2025
+      </span>
+    </div>
+
+    <p className="text-xs leading-relaxed text-neutral-700">
+      Christmas-themed posts for the Instagram account of
+      Clave Humana, a human resources consultancy firm.
+      I followed the brand's color palette and created
+      both feed and story versions.
+    </p>
+  </div>
+
+  <div slot="images">
+    <Grid
+      images={[
+        { title: "art collection", index: 4 },
+        { title: "art collection", index: 6 },
+        { title: "the blue terrarian", index: 2 },
+        { title: "fanart collection", index: 4 },
+      ]}
+    />
+  </div>
+
+</MenuSection>
+
+<MenuSection title="Diplomas">
+
+  <div className="space-y-4">
+    <div className="flex justify-end">
+      <span className="text-[10px] uppercase tracking-widest text-neutral-500">
+        2024–Present
+      </span>
+    </div>
+
+    <p className="text-xs leading-relaxed text-neutral-700">
+      I decided to redesign a Figma training certificate I
+      originally created for a design competition in 2024.
+      Since I had made two different versions back then,
+      I decided to follow the same approach and create
+      two new, more stylized designs.
+    </p>
+
+    <h4 className="pt-1 text-sm font-semibold text-[#78302f]">
+      Take a look at the original versions!
+    </h4>
+
+    <Carrusel
+      images={[
+        { title: "art collection", index: 4 },
+        { title: "art collection", index: 6 },
+        { title: "the blue terrarian", index: 2 },
+        { title: "fanart collection", index: 4 },
+      ]}
+    />
+  </div>
+
+  <div slot="images">
+    <Grid images={[
+      { title: "art collection", index: 4 },
+      { title: "art collection", index: 6 },
+      { title: "the blue terrarian", index: 2 },
+      { title: "fanart collection", index: 4 },
+    ]} />
+  </div>
+
+</MenuSection>
+
+{/* COLLABORATIVE PROJECTS */}
+<div className="mb-8 mt-12">
+  <span className="text-[10px] uppercase tracking-widest text-[#d18b42]">
+    03 / Teamwork
+  </span>
+  <h2 className="mt-1 text-3xl font-bold uppercase tracking-tight text-[#78302f] md:text-4xl">
+    Collaborative Projects
+  </h2>
+</div>
+
+<MenuSection title="MaiLive" side="right">
+
+  <div className="space-y-4">
+    <div className="flex justify-end">
+      <span className="text-[10px] uppercase tracking-widest text-neutral-500">
+        2025
+      </span>
+    </div>
+
+    <p className="text-xs leading-relaxed text-neutral-700">
+      For a university design class, I worked with a team on
+      a fictional streaming channel inspired by our own faculty.
+      We had to develop its visual identity and create
+      promotional materials, including posters and Instagram posts.
+    </p>
+
+    <p className="text-xs leading-relaxed text-neutral-700">
+      We chose the "Outlaw" archetype, giving the brand a
+      grunge-inspired scrapbook aesthetic with a monochromatic
+      color palette. Here are some of the designs I created
+      for the project.
+    </p>
+
+    <h4 className="pt-1 text-sm font-semibold text-[#78302f]">
+      Check out the original designs!
+    </h4>
+
+    <Carrusel
+      images={[
+        { title: "art collection", index: 4 },
+        { title: "art collection", index: 6 },
+        { title: "the blue terrarian", index: 2 },
+        { title: "fanart collection", index: 4 },
+      ]}
+    />
+  </div>
+
+  <div slot="images">
+    <Grid images={[
+      { title: "art collection", index: 4 },
+      { title: "art collection", index: 6 },
+      { title: "the blue terrarian", index: 2 },
+      { title: "fanart collection", index: 4 },
+    ]} />
+  </div>
+
+</MenuSection>
+
+<MenuSection title="Frutiger Moodboards">
+
+  <div className="space-y-4">
+    <div className="flex justify-end">
+      <span className="text-[10px] uppercase tracking-widest text-neutral-500">
+        2026–Present
+      </span>
+    </div>
+
+    <p className="text-xs leading-relaxed text-neutral-700">
+      Together with a friend, I've been creating moodboards
+      for a future project exploring the different styles
+      within the "Frutiger Aero" aesthetic.
+    </p>
+
+    <p className="text-xs leading-relaxed text-neutral-700">
+      So far, I've worked on Frutiger Aero, DORFic and
+      Frutiger Metro. The latter was particularly challenging,
+      as it took several iterations to get the look right.
+    </p>
+
+    <h4 className="pt-1 text-sm font-semibold text-[#78302f]">
+      Here's more!
+    </h4>
+
+    <Carrusel
+      images={[
+        { title: "art collection", index: 4 },
+        { title: "art collection", index: 6 },
+        { title: "the blue terrarian", index: 2 },
+        { title: "fanart collection", index: 4 },
+      ]}
+    />
+  </div>
+
+  <div slot="images">
+    <Grid images={[
+      { title: "art collection", index: 4 },
+      { title: "art collection", index: 6 },
+      { title: "the blue terrarian", index: 2 },
+      { title: "fanart collection", index: 4 },
+    ]} />
+  </div>
+
+</MenuSection>
+
+{/* EDITORIAL DESIGN */}
+<div className="mb-8 mt-12">
+  <span className="text-[10px] uppercase tracking-widest text-[#d18b42]">
+    04 / Print & Layout
+  </span>
+  <h2 className="mt-1 text-3xl font-bold uppercase tracking-tight text-[#78302f] md:text-4xl">
+    Editorial Design
+  </h2>
+</div>
+
+<MenuSection title="Magazines for exams" side="right">
+
+  <div className="space-y-4">
+    <div className="flex justify-end">
+      <span className="text-[10px] uppercase tracking-widest text-neutral-500">
+        2025
+      </span>
+    </div>
+
+    <p className="text-xs leading-relaxed text-neutral-700">
+      A collection of editorial projects created for university
+      assignments, exploring page layout, typography and
+      visual storytelling through magazine design.
+    </p>
+
+    <h4 className="pt-1 text-sm font-semibold text-[#78302f]">
+      Take a look at the original designs!
+    </h4>
+
+    <Carrusel
+      images={[
+        { title: "art collection", index: 4 },
+        { title: "art collection", index: 6 },
+        { title: "the blue terrarian", index: 2 },
+        { title: "fanart collection", index: 4 },
+      ]}
+    />
+  </div>
+
+  <div slot="images">
+    <Grid images={[
+      { title: "art collection", index: 4 },
+      { title: "art collection", index: 6 },
+      { title: "the blue terrarian", index: 2 },
+      { title: "fanart collection", index: 4 },
+    ]} />
+  </div>
+
+</MenuSection>

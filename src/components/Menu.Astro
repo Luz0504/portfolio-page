@@ -4,21 +4,41 @@ import type { ImageMetadata } from "astro";
 interface Props {
   pattern: ImageMetadata;
   title?: string;
+  programs?: ImageMetadata[];
 }
 
-const { pattern, title = "Today's Menu" } = Astro.props;
+const { pattern, title = "Today's Menu", programs = [] } = Astro.props;
+
+import BackButton from "./BackButton.astro";
 ---
 
 <section
-  class="my-20 mx-20 max-w-7xl bg-repeat p-7 md:p-6 shadow-black shadow-2xl"
+  class="my-20 mx-20 max-w-7xl bg-repeat p-7 md:p-6 shadow-black shadow-2xl rounded-2xl"
   style={`background-image: url('${pattern.src}');`}
 >
   <div class="border-6 border-[#f58d7b] bg-white p-5 md:p-8 lg:p-10">
-    <h2
-      class="mb-10 text-4xl uppercase text-[#78302f] md:mb-14 md:text-6xl"
-    >
-      {title}
-    </h2>
+    <BackButton href="/design" label="Back" />
+
+    <div class="mb-10 flex flex-wrap items-end justify-between gap-4 md:mb-14">
+      <h2 class="text-4xl uppercase text-[#78302f] md:text-6xl">
+        {title}
+      </h2>
+
+      {
+        programs.length > 0 && (
+          <div class="flex items-center gap-3 pb-1 h-full">
+            {programs.map((program) => (
+              <img
+                src={program.src}
+                alt=""
+                class=" w-7 object-contain md:h-full md:w-9 hover:scale-110 transition-transform duration-100"
+                loading="lazy"
+              />
+            ))}
+          </div>
+        )
+      }
+    </div>
 
     <div class="space-y-10 md:space-y-12">
       <slot />

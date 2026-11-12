@@ -5,6 +5,8 @@
  */
 
 @import "tailwindcss";
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
 
 @theme {
   --font-heading: "Glossy Sheen", cursive;

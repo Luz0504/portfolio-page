@@ -1,16 +1,62 @@
-
 import MenuSection from "../../components/MenuSection.astro";
 import Grid from "../../components/Grid.astro";
+import Button from "../../components/Button.astro";
 
 <MenuSection title="UX/UI" side="right">
 
-  Websites
+  <div className="space-y-7">
 
-  - College Projects
+    {/* WEBSITES */}
+    <div>
+      <span className="text-[10px] uppercase tracking-widest text-[#d18b42]">
+        01 / Web Design
+      </span>
 
-  Apps
+      <h3 className="mt-1 text-2xl font-bold text-[#78302f]">
+        Websites
+      </h3>
 
-  - College Projects
+      <p className="mt-1 text-sm italic text-neutral-500">
+        Designing digital spaces and experiences.
+      </p>
+
+      <ul className="mt-4 space-y-3 text-sm text-neutral-700">
+        <li>
+          <span className="font-semibold text-[#78302f]">College Projects</span>
+          <p className="mt-1 text-xs leading-relaxed">
+            Websites designed and developed as part of my university projects.
+          </p>
+        </li>
+      </ul>
+    </div>
+
+    <div className="h-px bg-[#f3d9cc]"></div>
+
+    {/* APPS */}
+    <div>
+      <span className="text-[10px] uppercase tracking-widest text-[#d18b42]">
+        02 / App Design
+      </span>
+
+      <h3 className="mt-1 text-2xl font-bold text-[#78302f]">
+        Apps
+      </h3>
+
+      <p className="mt-1 text-sm italic text-neutral-500">
+        From ideas to interactive experiences.
+      </p>
+
+      <ul className="mt-4 space-y-3 text-sm text-neutral-700">
+        <li>
+          <span className="font-semibold text-[#78302f]">College Projects</span>
+          <p className="mt-1 text-xs leading-relaxed">
+            App concepts and interfaces developed for university assignments.
+          </p>
+        </li>
+      </ul>
+    </div>
+
+  </div>
 
   <div slot="images">
     <Grid
@@ -22,13 +68,9 @@ import Grid from "../../components/Grid.astro";
     />
   </div>
 
-  <a
-  href="projects/illustration"
-  className="group inline-flex items-center justify-center gap-3 rounded-xl border-2 border-amber-800 bg-amber-300 px-6 py-3 font-bold text-amber-950"
->
-  <span>Check it out!</span>
-  <span className="transition-transform duration-200 group-hover:translate-x-1">
-    →
-  </span>
-</a>
+  <Button 
+  href="/projects/ux-ui"
+  label="View Project"
+  target="_self"/>
+
 </MenuSection>

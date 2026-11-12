@@ -1,63 +1,22 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import Menu from "../../components/Menu.astro";
-import MenuSection from "../../components/MenuSection.astro";
+import Des from "../../content/work/Des.mdx";
 
-import { denacimiento, pattern } from "../../assets/images/index.js";
+import {
+  pattern,
+  figma,
+  photoshop,
+  illustrator,
+} from "../../assets/images/index.js";
 ---
 
 <Layout>
-  <Menu pattern={pattern} title="My Projects">
-    <a href={`/projects/design`}
-      ><MenuSection title="Design">
-        <p>Proyectos de diseño gráfico, identidad visual y diseño editorial.</p>
-
-        <div slot="images" class="grid grid-cols-2 gap-4">
-          <img src={denacimiento.src} alt="Proyecto 1" class="w-full h-auto" />
-          <img src={denacimiento.src} alt="Proyecto 2" class="w-full h-auto" />
-          <img src={denacimiento.src} alt="Proyecto 3" class="w-full h-auto" />
-          <img src={denacimiento.src} alt="Proyecto 4" class="w-full h-auto" />
-        </div>
-      </MenuSection>
-    </a>
-
-    <a href={`/projects/illustration`}
-      ><MenuSection title="Illustration" side="right">
-        <p>Una selección de mis proyectos de ilustración.</p>
-
-        <div slot="images" class="grid grid-cols-2 gap-4">
-          <img src={denacimiento.src} alt="Proyecto 1" class="w-full h-auto" />
-          <img src={denacimiento.src} alt="Proyecto 2" class="w-full h-auto" />
-          <img src={denacimiento.src} alt="Proyecto 3" class="w-full h-auto" />
-          <img src={denacimiento.src} alt="Proyecto 4" class="w-full h-auto" />
-        </div>
-      </MenuSection>
-    </a>
-
-    <a href={`/projects/video-editing`}
-      ><MenuSection title="Video editing">
-        <p>Proyectos de edición y producción audiovisual.</p>
-
-        <div slot="images" class="grid grid-cols-2 gap-4">
-          <img src={denacimiento.src} alt="Proyecto 1" class="w-full h-auto" />
-          <img src={denacimiento.src} alt="Proyecto 2" class="w-full h-auto" />
-          <img src={denacimiento.src} alt="Proyecto 3" class="w-full h-auto" />
-          <img src={denacimiento.src} alt="Proyecto 4" class="w-full h-auto" />
-        </div>
-      </MenuSection>
-    </a>
-
-    <a href={`/projects/ux-ui`}
-      ><MenuSection title="UX/UI Design" side="right">
-        <p>Proyectos de diseño de experiencia de usuario y diseño de interfaz.</p>
-
-        <div slot="images" class="grid grid-cols-2 gap-4">
-          <img src={denacimiento.src} alt="Proyecto 1" class="w-full h-auto" />
-          <img src={denacimiento.src} alt="Proyecto 2" class="w-full h-auto" />
-          <img src={denacimiento.src} alt="Proyecto 3" class="w-full h-auto" />
-          <img src={denacimiento.src} alt="Proyecto 4" class="w-full h-auto" />
-        </div>
-      </MenuSection>
-    </a>
+  <Menu
+    pattern={pattern}
+    title="Design"
+    programs={[figma, photoshop, illustrator]}
+  >
+    <Des />
   </Menu>
 </Layout>
