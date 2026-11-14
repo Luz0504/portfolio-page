@@ -1,0 +1,163 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { contact } from "../assets/images/index.js";
+---
+
+<Layout>
+  <div class="contact-page relative isolate flex min-h-[calc(100svh-100px)] overflow-hidden bg-[#77a4c9] px-6 pb-32 pt-12 md:px-12 lg:px-20">
+
+    <img
+      src={contact.src}
+      alt=""
+      aria-hidden="true"
+      class="pointer-events-none absolute bottom-0 left-0 z-0 h-[55%] w-full object-cover object-top sm:h-[50%] lg:h-[55%]"
+    />
+
+    <section class="relative z-10 ml-auto w-full max-w-2xl self-center lg:w-1/2">
+
+      <h1 class="mb-6 text-center text-4xl font-black uppercase leading-tight tracking-tight text-[#78302f] sm:text-5xl lg:text-6xl lg:text-left">
+        Ready to order?
+      </h1>
+
+      <form id="contact-form" class="flex flex-col gap-4">
+
+        <div class="flex flex-col gap-2">
+          <label for="name" class="text-lg font-medium text-black">
+            Name
+          </label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            required
+            autocomplete="name"
+            class="w-full rounded-md border-2 border-transparent bg-white px-4 py-3 text-base text-[#78302f] outline-none transition focus:border-[#f58d7b]"
+          />
+        </div>
+
+        <div class="flex flex-col gap-2">
+          <label for="email" class="text-lg font-medium text-black">
+            E-Mail
+          </label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            required
+            autocomplete="email"
+            class="w-full rounded-md border-2 border-transparent bg-white px-4 py-3 text-base text-[#78302f] outline-none transition focus:border-[#f58d7b]"
+          />
+        </div>
+
+        <div class="flex flex-col gap-2">
+          <label for="phone" class="text-lg font-medium text-black">
+            Phone number <span class="text-sm text-black/50">(optional)</span>
+          </label>
+          <input
+          type="tel"
+          id="phone"
+          name="phone"
+          autocomplete="tel"
+          pattern="[0-9+() -]*"
+          title="Please enter a valid phone number using numbers, spaces, +, - or parentheses."
+          class="w-full rounded-md border-2 border-transparent bg-white px-4 py-3 text-base text-[#78302f] outline-none transition focus:border-[#f58d7b]"
+          />
+        </div>
+
+        <div class="flex flex-col gap-2">
+          <label for="inquiry" class="text-lg font-medium text-black">
+            Type of inquiry
+          </label>
+          <select
+            id="inquiry"
+            name="inquiry"
+            required
+            class="w-full rounded-md border-2 border-transparent bg-white px-4 py-3 text-base text-[#78302f] outline-none transition focus:border-[#f58d7b]"
+          >
+            <option value="" disabled selected>Select an option</option>
+            <option value="Graphic Design">Graphic Design</option>
+            <option value="Illustration">Illustration</option>
+            <option value="UX/UI Design">UX/UI Design</option>
+            <option value="Video Editing">Video Editing</option>
+            <option value="Other / General Inquiry">Other / General Inquiry</option>
+          </select>
+        </div>
+
+        <div class="flex flex-col gap-2">
+          <label for="deadline" class="text-lg font-medium text-black">
+            Project deadline <span class="text-sm text-black/50">(optional)</span>
+          </label>
+          <select
+            id="deadline"
+            name="deadline"
+            class="w-full rounded-md border-2 border-transparent bg-white px-4 py-3 text-base text-[#78302f] outline-none transition focus:border-[#f58d7b]"
+          >
+            <option value="Not specified" selected>Select a deadline</option>
+            <option value="As soon as possible">As soon as possible</option>
+            <option value="Within a month">Within a month</option>
+            <option value="Within 3 months">Within 3 months</option>
+            <option value="Flexible / No deadline">Flexible / No deadline</option>
+          </select>
+        </div>
+
+        <div class="flex flex-col gap-2">
+          <label for="message" class="text-lg font-medium text-black">
+            Tell me about your project
+          </label>
+          <textarea
+            id="message"
+            name="message"
+            rows="4"
+            required
+            placeholder="I'd love to hear about your idea, project or inquiry..."
+            class="w-full resize-y rounded-md border-2 border-transparent bg-white px-4 py-3 text-base text-[#78302f] outline-none transition placeholder:text-[#78302f]/40 focus:border-[#f58d7b]"
+          ></textarea>
+        </div>
+
+        <div class="flex justify-end">
+          <button
+            type="submit"
+            class="rounded-lg bg-[#a33c28] px-10 py-3 text-lg font-semibold text-white transition duration-200 hover:-translate-y-1 hover:bg-[#78302f] hover:shadow-[3px_4px_0px_#f58d7b] active:translate-y-0"
+          >
+            Send
+          </button>
+        </div>
+
+      </form>
+    </section>
+  </div>
+</Layout>
+
+<script>
+  const form = document.querySelector<HTMLFormElement>("#contact-form");
+
+  form?.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    const data = new FormData(form);
+
+    const name = String(data.get("name") ?? "");
+    const email = String(data.get("email") ?? "");
+    const phone = String(data.get("phone") || "Not provided");
+    const inquiry = String(data.get("inquiry") ?? "");
+    const deadline = String(data.get("deadline") ?? "Not specified");
+    const message = String(data.get("message") ?? "");
+
+    const subject = encodeURIComponent(`Portfolio inquiry - ${name}`);
+
+    const body = encodeURIComponent(
+      `Name: ${name}
+E-Mail: ${email}
+Phone: ${phone}
+
+Type of inquiry: ${inquiry}
+Project deadline: ${deadline}
+
+Message:
+${message}`
+    );
+
+    window.location.href =
+      `mailto:mlsueldo59@gmail.com?subject=${subject}&body=${body}`;
+  });
+</script>

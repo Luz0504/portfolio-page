@@ -9,5 +9,6 @@ import telephone from "./telephone.png";
 import firealpaca from "./firealpaca.png";
 import aboutcard from "./aboutcard.png";
 import menu from "./menu.png";
+import contact from "./contact.png";
 
-export { denacimiento, pattern, figma, after, premiere, illustrator, photoshop, telephone, firealpaca, aboutcard, menu };
+export { denacimiento, pattern, figma, after, premiere, illustrator, photoshop, telephone, firealpaca, aboutcard, menu, contact };

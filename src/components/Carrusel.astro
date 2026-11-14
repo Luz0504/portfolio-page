@@ -45,7 +45,6 @@ const carouselId = `carousel-${Math.random().toString(36).slice(2, 9)}`;
 
 <div class="w-full h-full min-h-0 flex flex-col" data-carousel id={carouselId}>
   <div class="flex flex-1 min-h-0 items-stretch gap-1">
-    <!-- Flecha anterior -->
     <button
       type="button"
       data-prev
@@ -55,10 +54,9 @@ const carouselId = `carousel-${Math.random().toString(36).slice(2, 9)}`;
       ‹
     </button>
 
-    <!-- Carrusel -->
     <div
       data-track
-      class="flex flex-1 gap-1.5 overflow-x-auto snap-x snap-mandatory scroll-smooth"
+      class="flex flex-1 gap-1.5 overflow-x-auto snap-x snap-mandatory scroll-smooth rounded-xl"
       style="scrollbar-width: none;"
     >
       {
@@ -86,7 +84,6 @@ const carouselId = `carousel-${Math.random().toString(36).slice(2, 9)}`;
       }
     </div>
 
-    <!-- Flecha siguiente -->
     <button
       type="button"
       data-next

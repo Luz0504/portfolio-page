@@ -3,7 +3,6 @@ import MenuSection from "../../components/MenuSection.astro";
 import Grid from "../../components/Grid.astro";
 import Carrusel from "../../components/Carrusel.astro";
 
-{/* ANIMATION */}
 <div className="mb-8 mt-4">
   <span className="text-[10px] uppercase tracking-widest text-[#d18b42]">
     01 / Motion Design
@@ -32,17 +31,16 @@ import Carrusel from "../../components/Carrusel.astro";
   <div slot="images">
     <Carrusel
       images={[
-        { title: "art collection", index: 4 },
-        { title: "art collection", index: 6 },
-        { title: "the blue terrarian", index: 2 },
-        { title: "fanart collection", index: 4 },
+        { title: "2d animations", index: 0 },
+        { title: "2d animations", index: 1 },
+        { title: "2d animations", index: 2 },
+        { title: "2d animations", index: 3 },
       ]}
     />
   </div>
 
 </MenuSection>
 
-{/* VIDEO EDITING */}
 <div className="mb-8 mt-12">
   <span className="text-[10px] uppercase tracking-widest text-[#d18b42]">
     02 / Post-production
@@ -52,40 +50,7 @@ import Carrusel from "../../components/Carrusel.astro";
   </h2>
 </div>
 
-<MenuSection title="Music video">
-
-  <div className="space-y-4">
-    <div className="flex justify-end">
-      <span className="text-[10px] uppercase tracking-widest text-neutral-500">
-        2024
-      </span>
-    </div>
-
-    <p className="text-xs leading-relaxed text-neutral-700">
-      A music video created as part of a university group project,
-      featuring "Break My Heart Myself" by Bebe Rexha. I was
-      responsible for filming and editing the visuals, including
-      color grading, masking and framing.
-    </p>
-
-    <p className="text-xs leading-relaxed text-neutral-700">
-      Some of my favorite details are the mirror effect at the
-      beginning and the flame colors towards the end.
-    </p>
-  </div>
-
-  <div slot="images">
-    <Carrusel
-      images={[
-        { title: "art collection", index: 4 },
-        { title: "art collection", index: 6 },
-      ]}
-    />
-  </div>
-
-</MenuSection>
-
-<MenuSection title="Remax Reels">
+<MenuSection title="Remax Reels" side="right">
 
   <div className="space-y-4">
     <div className="flex justify-end">
@@ -96,17 +61,17 @@ import Carrusel from "../../components/Carrusel.astro";
 
     <p className="text-xs leading-relaxed text-neutral-700">
       A collection of short-form videos and promotional reels
-      created for two real estate agents working at RE/MAX.
+      created for a real estate agent working at RE/MAX.
     </p>
   </div>
 
   <div slot="images">
     <Carrusel
       images={[
-        { title: "art collection", index: 4 },
-        { title: "art collection", index: 6 },
-        { title: "the blue terrarian", index: 2 },
-        { title: "fanart collection", index: 4 },
+        { title: "remax reels", index: 0 },
+        { title: "remax reels", index: 1 },
+        { title: "remax reels", index: 2 },
+        { title: "remax reels", index: 3 },
       ]}
     />
   </div>
