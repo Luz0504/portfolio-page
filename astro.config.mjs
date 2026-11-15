@@ -9,6 +9,11 @@ import react from '@astrojs/react';
 
 import mdx from '@astrojs/mdx';
 
+console.log("VERCEL ENV CHECK:", {
+  hasUrl: Boolean(process.env.PUBLIC_SUPABASE_URL),
+  hasKey: Boolean(process.env.PUBLIC_SUPABASE_PUBLISHABLE_KEY),
+});
+
 // https://astro.build/config
 export default defineConfig({
   site: 'https://example.com',
