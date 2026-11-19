@@ -1,3 +1,4 @@
+
 ---
 import "../styles/global.css";
 
@@ -15,18 +16,18 @@ const { title = SITE_TITLE, description = SITE_DESCRIPTION } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="es" >
+<html lang="es">
   <head>
     <BaseHead title={title} description={description} />
   </head>
 
-  <body class="min-h-screen flex flex-col bg-[#77a4c9] ">
-  <Header />
+  <body class="flex min-h-svh flex-col overflow-x-hidden bg-[#77a4c9]">
+    <Header />
 
-  <main class="flex-1 items-center justify-center">
-    <slot />
-  </main>
+    <main class="w-full flex-1 min-w-0">
+      <slot />
+    </main>
 
-  <Footer />
-</body>
+    <Footer />
+  </body>
 </html>

@@ -13,25 +13,25 @@ import BackButton from "./BackButton.astro";
 ---
 
 <section
-  class="mx-auto my-20 w-[calc(100%-2rem)] max-w-7xl bg-repeat p-7 shadow-black shadow-2xl rounded-4xl md:w-[calc(100%-4rem)] md:p-6"
+  class="mx-auto my-10 w-[calc(100%-1.5rem)] max-w-7xl rounded-3xl bg-repeat p-3 shadow-2xl shadow-black sm:my-14 sm:w-[calc(100%-2rem)] sm:p-5 md:my-20 md:w-[calc(100%-4rem)] md:rounded-4xl md:p-7"
   style={`background-image: url('${pattern.src}');`}
 >
-  <div class="border-6 border-[#f58d7b] bg-white p-5 md:p-8 lg:p-10">
+  <div class="border-4 border-[#f58d7b] bg-white p-4 sm:p-6 md:border-6 md:p-8 lg:p-10">
     <BackButton href="/design" label="Back" />
 
-    <div class="mb-10 flex flex-wrap items-end justify-between gap-4 md:mb-14">
-      <h2 class="text-4xl uppercase text-[#78302f] md:text-6xl">
+    <div class="mb-8 flex flex-wrap items-end justify-between gap-4 sm:mb-10 md:mb-14">
+      <h2 class="max-w-full break-words text-3xl uppercase text-[#78302f] sm:text-4xl md:text-6xl">
         {title}
       </h2>
 
       {
         programs.length > 0 && (
-          <div class="flex items-center gap-3 pb-1 h-full">
+          <div class="flex flex-wrap items-center gap-2 pb-1 sm:gap-3">
             {programs.map((program) => (
               <img
                 src={program.src}
                 alt=""
-                class=" w-7 object-contain md:h-full md:w-9 hover:scale-110 transition-transform duration-100"
+                class="h-6 w-6 object-contain transition-transform duration-100 hover:scale-110 sm:h-8 sm:w-8 md:h-9 md:w-9"
                 loading="lazy"
               />
             ))}
@@ -40,7 +40,7 @@ import BackButton from "./BackButton.astro";
       }
     </div>
 
-    <div class="space-y-10 md:space-y-12">
+    <div class="space-y-8 sm:space-y-10 md:space-y-12">
       <slot />
     </div>
   </div>
