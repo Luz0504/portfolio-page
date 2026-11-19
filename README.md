@@ -1,63 +1,122 @@
-# Astro Starter Kit: Blog
+# Portfolio Website
 
-```sh
-npm create astro@latest -- --template blog
+Personal portfolio website built with **Astro**, featuring projects, graphic design work, illustrations and a contact form.
+
+## Tech Stack
+
+- [Astro](https://astro.build/) – Web framework
+- [Tailwind CSS](https://tailwindcss.com/) – Styling
+- [React](https://react.dev/) – Interactive components
+- [MDX](https://mdxjs.com/) – Content and project pages
+- [Supabase](https://supabase.com/) – Database and project content
+
+## Getting Started
+
+Follow these steps to run the project locally.
+
+### Prerequisites
+
+Make sure you have installed:
+
+- [Node.js](https://nodejs.org/) (v22.12.0 or higher)
+- npm (included with Node.js)
+- Git
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/Luz0504/portfolio-page.git
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+### 2. Navigate to the project folder
 
-Features:
+```
+cd portfolio-page
+```
 
-- ✅ Minimal styling (make it your own!)
-- ✅ 100/100 Lighthouse performance
-- ✅ SEO-friendly with canonical URLs and Open Graph data
-- ✅ Sitemap support
-- ✅ RSS Feed support
-- ✅ Markdown & MDX support
+### 3. Install dependencies
 
-## 🚀 Project Structure
+```
+npm install
+```
 
-Inside of your Astro project, you'll see the following folders and files:
+### 4. Configure environment variables
 
-```text
+The project uses Supabase to retrieve project information.
+
+Create a `.env` file in the root directory and add the following variables:
+
+```
+PUBLIC_SUPABASE_URL=your_supabase_project_url
+PUBLIC_SUPABASE_PUBLISHABLE_KEY=your_supabase_publishable_key
+```
+
+Replace the placeholder values with your own Supabase project credentials.
+
+**Note:** The application requires these variables to connect to Supabase. Without them, the project may not run or build correctly.
+
+### 5. Start the development server
+
+```
+npm run dev
+```
+
+Open [http://localhost:4321](http://localhost:4321) in your browser.
+
+## Available Commands
+
+| Command | Description |
+|---|---|
+| `npm install` | Installs project dependencies |
+| `npm run dev` | Starts the local development server |
+| `npm run build` | Builds the production version in `dist/` |
+| `npm run preview` | Previews the production build locally |
+| `npm run astro` | Runs Astro CLI commands |
+
+## Project Structure
+```
 ├── public/
 ├── src/
-│   ├── assets/
-│   ├── components/
-│   ├── content/
-│   ├── layouts/
-│   └── pages/
+│   ├── assets/
+│   ├── components/
+│   ├── content/
+│   ├── layouts/
+│   ├── lib/
+│   ├── pages/
+│   └── styles/
 ├── astro.config.mjs
-├── README.md
 ├── package.json
-└── tsconfig.json
+├── tsconfig.json
+└── README.md
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## Deployment
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+The website is deployed on [Vercel](https://vercel.com/).
 
-The `src/content/` directory contains "collections" of related Markdown and MDX documents. Use `getCollection()` to retrieve posts from `src/content/blog/`, and type-check your frontmatter using an optional schema. See [Astro's Content Collections docs](https://docs.astro.build/en/guides/content-collections/) to learn more.
+Environment variables must also be configured in the Vercel project settings for production builds.
 
-Any static assets, like images, can be placed in the `public/` directory.
+## Contact
 
-## 🧞 Commands
+Feel free to explore the portfolio and get in touch through the contact form.
 
-All commands are run from the root of the project, from a terminal:
+## AI-Assisted Development
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+ChatGPT wes used as a main tool throughout the development process as a way to explore ideas, solve technical challenges and improve the final result.
 
-## 👀 Want to learn more?
+Some of the tasks supported by AI included:
 
-Check out [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+- **Code development:** Assistance with writing, reviewing, debugging and optimizing Astro components, layouts and styles.
+- **Responsive design:** Refining layouts and adapting components to different screen sizes.
+- **Problem solving:** Identifying errors, troubleshooting build issues and improving the overall code structure.
+- **Supabase integration:** Assistance with database configuration, environment variables and retrieving dynamic content.
+- **Deployment:** Support with GitHub and Vercel configuration and troubleshooting deployment issues.
+- **Documentation:** Organizing project information and preparing setup instructions.
 
-## Credit
+AIStudio was another option that was considered for the project, but it didn't work out as expected.
 
-This theme is based off of the lovely [Bear Blog](https://github.com/HermanMartinus/bearblog/).
+## Graphic Design
+
+Design choices were taken prior to programming, both on Figma and on paper.
+
+- Link to the Figma file (https://www.figma.com/design/dR21ZUCvIJcpVoqsnmwQ2o/Programacion-Final?node-id=0-1&t=nXzmeYpzqmj2bdQm-1)
